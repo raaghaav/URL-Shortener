@@ -16,6 +16,18 @@ app.get('/', async (req, res) => {
   res.render('index', { shortUrls: shortUrls });
 });
 
+app.get('/login', (req, res) => {
+  res.render('login.ejs');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register.ejs');
+});
+
+app.post('/register', async (req, res) => {
+  
+})
+
 app.post('/shortUrls', async (req, res) => {
   await ShortUrl.create({ full: req.body.fullUrl });
 
